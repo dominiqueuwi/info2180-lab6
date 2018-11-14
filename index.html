@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+
+<html> 
+	<head>
+
+	<style type= "text/css"> 
+
+
+		</style> 
+
+	</head> 
+
+	<body> 
+
+			<div class="Mid"> 
+
+
+			<p> DEFINITION </p>
+
+
+				<button id = "Search"> Search </button> 
+			</div>
+
+			<div > Result </div>
+			<div id = "Result"> </div>
+
+
+		<script> 
+
+			window.onload = function() { 
+				var search_button = document.getElementById("Search");
+				var defintions = document.getElementById("defintion")
+				var result = document.getElementById("Result");
+				
+				search_button.addEventListener('click', function () { 
+
+						xmlHTTPs = new XMLHttpRequest(); 
+
+							url = 'request.php?q=' +entry;
+							xmlHttps.onreadystatechange = Request();
+							xmlHttps.open('GET', global url);
+							xmlHttps.send();
+						});
+
+				}
+
+			function Request() { 
+					if(xmlHttps.readyState === XMLHttpRequest.DONE){
+
+						if(xmlHttps.status === 200) { 
+							var definition = getHTTPs.responseText;
+							
+							console.log(definition);
+							document.getElementById("Result").innerHTML = definition;
+
+							Result.innerHTML = xmlHttps.responseText;
+
+						}
+
+				}
+
+}
+
+	function getEveryDefinition() { 
+
+		var url = "request.php?q="+Result.getAttribute('every'); 
+			Request().onreadystatechange = Request;
+			Request.open("GET", url);
+			Request.send();
+
+
+	}
+
+
+		</script>
+	
+	</body>
+
+	</html>
+
